@@ -2,16 +2,17 @@
 .alert-info a{
     text-decoration: none;
     color: black;
-    font-size: large;
+    font-size: medium;
 }
 
 .alert-info {
-    /*display: inline-block;*/
+    box-sizing: border-box;
     background-color: lightblue;
-    border: solid 5px tan;
+    border: solid 2px lightgrey;
     text-align: center;
-    margin: 2em;
-    padding: 2em;
+    width: 100%;
+    margin: 12px;
+    padding: 1em;
 }
 
 body {
@@ -20,45 +21,96 @@ body {
     /*justify-content: center;*/
     /*align-items: center;*/
     flex-direction: column;
+    margin: 26px;
 }
 
-ul {
-    list-style: none;
-    text-align: center;
-    display: flex;
+.nav-links {
     flex-direction: column;
-    justify-content: space-between;
+    display: flex;
+    list-style: none;
+    padding: 0;
 }
 
-li {
-    display: block;
-    background: lightgrey;
+/*!*ul {*!    the first attempt*/
+/*    list-style: none;*/
+/*    text-align: center;*/
+/*    display: flex;*/
+/*    flex-direction: column;*/
+/*    justify-content: space-between;*/
+
+/*}*/
+
+.nav-links li{
+    box-sizing: border-box;
+    background-color: lightgrey;
     width: 100%;
-    padding: .5em;
-    margin-bottom: .5em;
-    /* ^ or justify-content: space-between;*/
+    margin: 5px 0;
+    padding: 12px;
+    font-size: small;
+    text-align: center;
 }
+
+/*!*li {*!   the first attempt*/
+/*    display: block;*/
+/*    background: lightgrey;*/
+/*    width: 100%;*/
+/*    padding: .5em;*/
+/*    margin-bottom: .5em;*/
+/*    !* ^ or justify-content: space-between;*!*/
+/*}*/
 
 h1 {
     text-align: center;
 }
 
-.header-img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 50%;
-    height: auto;
+img {
+    width: 100%;
 }
 
 
-h2 {
+@media screen and (min-width: 768px) {
+    body {
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
 
+    .hidden-on-desktop {
+        display: none;
+
+    }
+    .nav-links {
+        flex-direction: row;
+    }
+
+    .nav-links li {
+        background: none;
+    }
+
+    .header-img {
+        width: 100%
+    }
+
+    .main {
+        width: 55%;
+    }
+
+    .sub-section {
+        width: 35%;
+    }
+}
+/*!*.header-img {*!    lol, overcomplicated it. */
+/*    display: block;*/
+
+/*    margin-right: auto;*/
+/*    width: 50%;*/
+/*    height: auto;*/
+/*}*/
+
+.sub-section {
+    font-style: italic;
 }
 
-main {
-
-}
 
 /*@media screen and (max-width:500px) {*/
 
@@ -78,4 +130,12 @@ main {
 /*    }*/
 /*}*/
 
+/* ^ original attempt*/
 
+
+/*@media screen and (min-width: 480px) {*/
+/*    #leftsidebar {width: 200px; float: left;}*/
+/*    #main {margin-left: 216px;}*/
+/*}*/
+
+/* ^ 2nd attempt*/
